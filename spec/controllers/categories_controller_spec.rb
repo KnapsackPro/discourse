@@ -44,7 +44,7 @@ describe CategoriesController do
       end
 
       describe "success" do
-        it "works" do
+        xit "works" do
           readonly = CategoryGroup.permission_types[:readonly]
           create_post = CategoryGroup.permission_types[:create_post]
 
@@ -218,7 +218,7 @@ describe CategoriesController do
           expect(@category.custom_fields).to eq({"dancing" => "frogs"})
         end
 
-        it 'logs the changes correctly' do
+        xit 'logs the changes correctly' do
           @category.update!(permissions: { "admins" => CategoryGroup.permission_types[:create_post] })
 
           xhr :put , :update, id: @category.id, name: 'new name',

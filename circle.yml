@@ -10,7 +10,6 @@ machine:
 dependencies:
   pre:
     - sudo apt-get update; sudo apt-get install gifsicle jpegoptim optipng jhead
-    - psql --version
 
 test:
   pre:

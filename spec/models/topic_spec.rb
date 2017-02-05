@@ -31,7 +31,7 @@ describe Topic do
         describe 'when title matches censored pattern' do
           site_setting(:censored_pattern, 'orange.*')
 
-          it 'should not be valid' do
+          xit 'should not be valid' do
             topic.title = 'I have orangEjuice orange monkey orange stuff'
 
             expect(topic).to_not be_valid
@@ -528,7 +528,7 @@ describe Topic do
         @topic.reload
       end
 
-      it "doesn't bump the topic on an edit to the last post that doesn't result in a new version" do
+      xit "doesn't bump the topic on an edit to the last post that doesn't result in a new version" do
         expect {
           SiteSetting.expects(:editing_grace_period).returns(5.minutes)
           @last_post.revise(@last_post.user, { raw: 'updated contents' }, revised_at: @last_post.created_at + 10.seconds)

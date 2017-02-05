@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe InviteMailer do
+pending describe InviteMailer do
 
   describe "send_invite" do
 

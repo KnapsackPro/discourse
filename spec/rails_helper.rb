@@ -13,7 +13,8 @@ require 'rbtrace'
 #require 'spork/ext/ruby-debug'
 
 require 'fakeweb'
-FakeWeb.allow_net_connect = false
+#FakeWeb.allow_net_connect = false
+FakeWeb.allow_net_connect = %r[^https?://api\.knapsackpro\.com]
 
 Spork.prefork do
   # Loading more in this block will cause your tests to run faster. However,

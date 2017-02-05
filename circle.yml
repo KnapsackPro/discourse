@@ -34,3 +34,6 @@ test:
 
     - bundle exec rake knapsack_pro:rspec:
         parallel: true # Caution: there are 8 spaces indentation!
+
+    - bundle exec rake knapsack_pro:queue:rspec:
+        parallel: true # Caution: there are 8 spaces indentation!

@@ -123,6 +123,7 @@ group :test do
 end
 
 group :test, :development do
+  gem 'knapsack_pro'
   gem 'rspec'
   gem 'mock_redis'
   gem 'listen', '0.7.3', require: false

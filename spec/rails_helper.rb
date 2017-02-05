@@ -1,3 +1,6 @@
+require 'knapsack_pro'
+KnapsackPro::Adapters::RSpecAdapter.bind
+
 if ENV['COVERAGE']
   require 'simplecov'
   SimpleCov.start

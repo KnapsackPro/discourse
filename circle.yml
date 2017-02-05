@@ -30,4 +30,7 @@ test:
 
     #- bundle exec rake qunit:test['200000']
 
-    - bundle exec rspec
+    #- bundle exec rspec
+
+    - bundle exec rake knapsack_pro:rspec:
+        parallel: true # Caution: there are 8 spaces indentation!

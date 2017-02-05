@@ -10,3 +10,4 @@ Discourse::Application.load_tasks
 # PostgreSQL configuations when trying to create structure.sql
 Rake::Task["db:structure:dump"].clear if Rails.env.production?
 
+KnapsackPro.load_tasks if defined?(KnapsackPro)

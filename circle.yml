@@ -4,8 +4,8 @@ machine:
   environment:
     DISCOURSE_HOSTNAME: www.example.com
     RUBY_GC_MALLOC_LIMIT: 50000000
-  pre:
-    - cp .ruby-version.sample .ruby-version
+  ruby:
+    version: 2.3.0
 
 test:
   pre:

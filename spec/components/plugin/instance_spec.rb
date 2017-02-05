@@ -225,7 +225,7 @@ describe Plugin::Instance do
       plugin
     end
 
-    it 'should add the right callback' do
+    xit 'should add the right callback' do
       called = 0
 
       plugin_instance.add_model_callback(User, :after_create) do
@@ -241,7 +241,7 @@ describe Plugin::Instance do
       expect(called).to eq(1)
     end
 
-    it 'should add the right callback with options' do
+    xit 'should add the right callback with options' do
       called = 0
 
       plugin_instance.add_model_callback(User, :after_commit, on: :create) do

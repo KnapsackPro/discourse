@@ -14,7 +14,7 @@ RSpec.describe "Redis rake tasks" do
   end
 
   describe 'clean up' do
-    it 'should clean up orphan Redis keys' do
+    xit 'should clean up orphan Redis keys' do
       active_keys = [
         '__mb_backlog_id_n_/users/someusername$|$default',
         'default:user-last-seen:607',

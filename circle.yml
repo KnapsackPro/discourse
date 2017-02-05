@@ -24,6 +24,6 @@ test:
     - eslint test/javascripts
 
   override:
-    - bundle exec rake plugin:spec
-    - bundle exec rake qunit:test['200000']
+    #- bundle exec rake plugin:spec
+    #- bundle exec rake qunit:test['200000']
     - bundle exec rspec

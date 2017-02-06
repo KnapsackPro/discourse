@@ -13,7 +13,7 @@ describe SearchIndexer do
     expect(raw_data.split(' ').length).to eq(2)
   end
 
-  it 'correctly indexes a post' do
+  xit 'correctly indexes a post' do
     data = "<a>This</a> is a test"
 
     SearchIndexer.update_posts_index(99, data, "", nil)

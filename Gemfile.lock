@@ -92,7 +92,6 @@ GEM
       jquery-rails (>= 1.0.17)
       railties (>= 3.1)
     ember-source (2.10.0)
-    equatable (0.5.0)
     erubis (2.7.0)
     excon (0.53.0)
     execjs (2.7.0)
@@ -139,9 +138,8 @@ GEM
     json (1.8.6)
     jwt (1.5.2)
     kgio (2.10.0)
-    knapsack_pro (0.39.0)
+    knapsack_pro (0.40.0)
       rake
-      tty-prompt (~> 0.7)
     libv8 (5.3.332.38.3)
     listen (0.7.3)
     logster (1.2.5)
@@ -169,7 +167,6 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     mustache (1.0.3)
-    necromancer (0.4.0)
     netrc (0.11.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -222,9 +219,6 @@ GEM
     openid-redis-store (0.0.2)
       redis
       ruby-openid
-    pastel (0.7.1)
-      equatable (~> 0.5.0)
-      tty-color (~> 0.4.0)
     pg (0.19.0)
     progress (3.1.1)
     pry (0.10.4)
@@ -372,13 +366,6 @@ GEM
     tilt (2.0.5)
     timecop (0.8.1)
     trollop (2.1.2)
-    tty-color (0.4.2)
-    tty-cursor (0.4.0)
-    tty-prompt (0.12.0)
-      necromancer (~> 0.4.0)
-      pastel (~> 0.7.0)
-      tty-cursor (~> 0.4.0)
-      wisper (~> 1.6.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.2)
@@ -390,7 +377,6 @@ GEM
       kgio (~> 2.6)
       raindrops (~> 0.7)
     uniform_notifier (1.10.0)
-    wisper (1.6.1)
 
 PLATFORMS
   ruby

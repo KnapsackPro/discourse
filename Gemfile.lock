@@ -138,7 +138,7 @@ GEM
     json (1.8.6)
     jwt (1.5.2)
     kgio (2.10.0)
-    knapsack_pro (0.40.0)
+    knapsack_pro (0.41.0)
       rake
     libv8 (5.3.332.38.3)
     listen (0.7.3)

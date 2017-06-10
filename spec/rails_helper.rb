@@ -93,7 +93,7 @@ Spork.prefork do
       require_dependency 'site_settings/local_process_provider'
       SiteSetting.provider = SiteSettings::LocalProcessProvider.new
 
-      WebMock.disable_net_connect!
+      WebMock.disable_net_connect!(:allow => ['api.knapsackpro.com'])
     end
 
     class DiscourseMockRedis < MockRedis

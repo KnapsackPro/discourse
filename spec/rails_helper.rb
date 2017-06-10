@@ -24,6 +24,9 @@ Spork.prefork do
   require 'shoulda'
   require 'sidekiq/testing'
 
+  require 'fakeweb'
+  FakeWeb.allow_net_connect = %r[^https?://api.knapsackpro.com]
+
   require 'knapsack_pro'
   KnapsackPro::Adapters::RSpecAdapter.bind
 

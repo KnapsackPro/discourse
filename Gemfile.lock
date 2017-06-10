@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/KnapsackPro/knapsack_pro-ruby.git
+  revision: ff3725c77181fdbfe21dd87272d905d0603ffa10
+  branch: queue-clear-rspec-examples-3
+  specs:
+    knapsack_pro (0.41.0)
+      rake
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -143,8 +151,6 @@ GEM
       thor (>= 0.14, < 2.0)
     jwt (1.5.6)
     kgio (2.11.0)
-    knapsack_pro (0.41.0)
-      rake
     libv8 (5.3.332.38.5)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -427,7 +433,7 @@ DEPENDENCIES
   hiredis
   htmlentities
   http_accept_language (~> 2.0.5)
-  knapsack_pro
+  knapsack_pro!
   listen
   logster
   lru_redux

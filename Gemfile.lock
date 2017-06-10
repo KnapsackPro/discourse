@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/KnapsackPro/knapsack_pro-ruby.git
-  revision: ff3725c77181fdbfe21dd87272d905d0603ffa10
+  revision: 63d7428c0a2ceb57527a9e38e1e7991ae91dcde5
   branch: queue-clear-rspec-examples-3
   specs:
     knapsack_pro (0.41.0)

@@ -124,8 +124,7 @@ group :test do
 end
 
 group :test, :development do
-  #gem 'knapsack_pro'
-  gem 'knapsack_pro', github: 'KnapsackPro/knapsack_pro-ruby', branch: 'queue-clear-rspec-examples-3'
+  gem 'knapsack_pro'
   gem 'rspec'
   gem 'mock_redis'
   gem 'listen', require: false

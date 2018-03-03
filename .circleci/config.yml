@@ -62,8 +62,8 @@ jobs:
           key: v2-dependencies-bundler-{{ checksum "Gemfile.lock" }}
 
       # Database setup
-      #- run: rake db:create
-      #- run: rake db:migrate
+      - run: rake db:create
+      - run: rake db:migrate
 
       # run tests!
       # don't test plugins installed in ./plugins/
@@ -73,6 +73,6 @@ jobs:
 
       #- run: bundle exec rspec
 
-      #- run: bundle exec rake knapsack_pro:rspec
+      - run: bundle exec rake knapsack_pro:rspec
 
-      #- run: bundle exec rake knapsack_pro:queue:rspec
+      - run: bundle exec rake knapsack_pro:queue:rspec

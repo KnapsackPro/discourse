@@ -1,0 +1,77 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    parallelism: 4
+    docker:
+      # specify the version you desire here
+      - image: circleci/ruby:2.3-jessie-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: discourse
+          RAILS_ENV: test
+          DISCOURSE_HOSTNAME: www.example.com
+          RUBY_GC_MALLOC_LIMIT: 50000000
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/postgres:9.4.12-alpine
+        environment:
+          POSTGRES_DB: discourse_test
+          POSTGRES_PASSWORD: ""
+          POSTGRES_USER: discourse
+
+      - image: redis:3.2.7
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      - run: sudo apt-get update; sudo apt-get install gifsicle jpegoptim optipng jhead
+      - run: git clone --depth=1 https://github.com/discourse/discourse-backup-uploads-to-s3.git plugins/discourse-backup-uploads-to-s3
+      - run: git clone --depth=1 https://github.com/discourse/discourse-spoiler-alert.git plugins/discourse-spoiler-alert
+      - run: git clone --depth=1 https://github.com/discourse/discourse-cakeday.git plugins/discourse-cakeday
+      - run: git clone --depth=1 https://github.com/discourse/discourse-canned-replies.git plugins/discourse-canned-replies
+      #- run: npm i -g eslint babel-eslint
+      #- run: eslint app/assets/javascripts
+      #- run: eslint --ext .es6 app/assets/javascripts
+      #- run: eslint --ext .es6 test/javascripts
+      #- run: eslint --ext .es6 plugins/**/assets/javascripts
+      #- run: eslint test/javascripts
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v2-dependencies-bundler-{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
+          # fallback to using the latest cache if no exact match is found
+          - v2-dependencies-bundler-
+
+      - run:
+          name: install ruby dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v2-dependencies-bundler-{{ checksum "Gemfile.lock" }}-{{ checksum ".ruby-version" }}
+
+      # Database setup
+      - run: rake db:setup
+
+      # run tests!
+      # don't test plugins installed in ./plugins/
+      #- run: bundle exec rake plugin:spec
+
+      #- run: bundle exec rake qunit:test['200000']
+
+      #- run: bundle exec rspec
+
+      - run: bundle exec rake knapsack_pro:rspec
+
+      - run: bundle exec rake knapsack_pro:queue:rspec

@@ -62,8 +62,7 @@ jobs:
           key: v2-dependencies-bundler-{{ checksum "Gemfile.lock" }}
 
       # Database setup
-      - run: rake db:create
-      - run: rake db:migrate
+      - run: rake db:schema:load
 
       # run tests!
       # don't test plugins installed in ./plugins/

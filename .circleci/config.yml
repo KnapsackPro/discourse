@@ -32,7 +32,7 @@ jobs:
     steps:
       - checkout
 
-      - run: sudo apt-get update; sudo apt-get install gifsicle jpegoptim optipng jhead
+      - run: sudo apt-get update; sudo apt-get install gifsicle jpegoptim optipng jhead postgresql-client
       - run: git clone --depth=1 https://github.com/discourse/discourse-backup-uploads-to-s3.git plugins/discourse-backup-uploads-to-s3
       - run: git clone --depth=1 https://github.com/discourse/discourse-spoiler-alert.git plugins/discourse-spoiler-alert
       - run: git clone --depth=1 https://github.com/discourse/discourse-cakeday.git plugins/discourse-cakeday

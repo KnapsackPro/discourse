@@ -73,6 +73,8 @@ jobs:
 
       #- run: bundle exec rspec
 
+      - run: bundle exec rspec --dry-run -f json spec
+
       - run: bundle exec rake knapsack_pro:rspec
 
       - run: bundle exec rake knapsack_pro:queue:rspec

@@ -1,3 +1,5 @@
+[![Knapsack Pro Parallel CI builds for Github KnapsackPro/discourse](https://img.shields.io/badge/Knapsack%20Pro-Parallel%20/%20Github%20KnapsackPro/discourse-%230074ff)](https://knapsackpro.com/dashboard/organizations/54/projects/58/test_suites/156/builds)
+
 <a href="http://www.discourse.org/">![Logo](images/discourse.png)</a>
 
 Discourse is the 100% open source discussion platform built for the next decade of the Internet. Use it as a:

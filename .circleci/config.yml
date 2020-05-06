@@ -79,10 +79,9 @@ jobs:
 
       - run: bundle exec rake knapsack_pro:rspec
 
-      - run:
-          name: RSpec with Knapsack Pro Queue Mode
-          when: always
-          command: bundle exec rake knapsack_pro:queue:rspec
+      #- run:
+      #    name: RSpec with Knapsack Pro Queue Mode
+      #    command: bundle exec rake knapsack_pro:queue:rspec
 
       - run:
           name: RSpec with Knapsack Pro Queue Mode - split by test examples

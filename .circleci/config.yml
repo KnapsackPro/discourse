@@ -80,3 +80,9 @@ jobs:
       - run: bundle exec rake knapsack_pro:rspec
 
       - run: bundle exec rake knapsack_pro:queue:rspec
+
+      - run:
+          name: RSpec split by test examples
+          command: |
+            export KNAPSACK_PRO_RSPEC_SPLIT_BY_TEST_EXAMPLES=true
+            bundle exec rake knapsack_pro:queue:rspec

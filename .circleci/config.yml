@@ -8,7 +8,7 @@ jobs:
     parallelism: 4
     docker:
       # specify the version you desire here
-      - image: circleci/ruby:2.3-jessie-node-browsers
+      - image: circleci/ruby:2.6-jessie-node-browsers
         environment:
           PGHOST: 127.0.0.1
           PGUSER: discourse
